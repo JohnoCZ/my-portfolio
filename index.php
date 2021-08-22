@@ -13,6 +13,10 @@ if(isset($_GET['lang']) && $_GET['lang'] != ''){
 }
 include('langs/'.$_SESSION['lang'].'.php');
 
+if ($_SESSION['lang'] == "cz")
+    $html_lang = "cs_CZ";
+else if ($_SESSION['lang'] == "en")
+    $html_lang = "en";
 ?>
 
 <?php
@@ -67,8 +71,12 @@ else if ($random == 6)
     $url = 'images/gallery/IMG_571.jpg';
 $image = $url;
 ?>
+
+<?php
+header('Content-type: text/html; charset=utf-8');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $html_lang ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,8 +120,8 @@ $image = $url;
 </head>
 <body>
     <div id="select-lang">
-        <a href="index.php?lang=cz"><img src="images/icons/czech-republic.png" height="32" width="32"></a>
-        <a href="index.php?lang=en"><img src="images/icons/united-kingdom.png" height="32" width="32"></a>
+        <a href="index.php?lang=cz"><img src="images/icons/czech-republic.png" height="32" width="32" alt="CZ"></a>
+        <a href="index.php?lang=en"><img src="images/icons/united-kingdom.png" height="32" width="32" alt="EN"></a>
     </div>
     <header>
         <div class="container text-center" id="header-container">
@@ -151,7 +159,7 @@ $image = $url;
     <section id="about" class="container">
         <div class="row">
             <div class="col-sm-3">
-                <img src="<?= $image ?>" id="img">
+                <img src="<?= $image ?>" id="img" alt="Main obrázek">
             </div>
             <div class="col-sm-9">
                 <h2><?= $lang['about'] ?></h2>
@@ -166,27 +174,27 @@ $image = $url;
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-body" id="card">
+                    <div class="card-body own-card">
                         <h3>ProjectFuture.cz</h3>
-                        <span class="badge badge-danger">PHP</span> <span class="badge badge-primary">SQL</span> <span class="badge badge-secondary">Linux</span> | 2021 - <?= $lang['current'] ?>
+                        <p><span class="badge badge-danger">PHP</span> <span class="badge badge-primary">SQL</span> <span class="badge badge-secondary">Linux</span> | 2021 - <?= $lang['current'] ?></p>
                         <p><?= $lang['ProjectFuture.cz'] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-body" id="card">
+                    <div class="card-body own-card">
                         <h3>Chápeš.cz</h3>
-                        <span class="badge badge-danger">PHP</span> <span class="badge badge-info">JavaScript</span> | 2021 - <?= $lang['current'] ?>
+                        <p><span class="badge badge-danger">PHP</span> <span class="badge badge-info">JavaScript</span> | 2021 - <?= $lang['current'] ?></p>
                         <p><?= $lang['Chapes.cz'] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-body" id="card">
+                    <div class="card-body own-card">
                         <h3>Friday</h3>
-                        <span class="badge badge-success">PYTHON</span> <span class="badge badge-primary">SQL</span> | 2020 - <?= $lang['current'] ?>
+                        <p><span class="badge badge-success">PYTHON</span> <span class="badge badge-primary">SQL</span> | 2020 - <?= $lang['current'] ?></p>
                         <p><?= $lang['Friday'] ?></p>
                     </div>
                 </div>
@@ -196,9 +204,9 @@ $image = $url;
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-body" id="card">
+                    <div class="card-body own-card">
                         <h3>TraiderBlocks.eu</h3>
-                        2020 - 2021
+                        <p>2020 - 2021</p>
                         <p><?= $lang['TraiderBlocks.eu'] ?></p>
                     </div>
                 </div>
@@ -284,16 +292,16 @@ $image = $url;
         <h2><?= $lang['social-sites'] ?></h2>
         <div class="row">
             <div class="col">
-                <a href="https://github.com/Johno95CZ"><img src="images/icons/github.png" height="64" width="64"></a>
+                <a href="https://github.com/Johno95CZ"><img src="images/icons/github.png" height="64" width="64" alt="Github"></a>
             </div>
             <div class="col">
-                <a href="https://twitter.com/johnocz"><img src="images/icons/twitter.png" height="64" width="64"></a>
+                <a href="https://twitter.com/johnocz"><img src="images/icons/twitter.png" height="64" width="64" alt="Twitter"></a>
             </div>
             <div class="col">
-                <a href="https://www.youtube.com/channel/UCLoAYsV-GTZ5yfTe539tefg"><img src="images/icons/youtube.png" height="64" width="64"></a>
+                <a href="https://www.youtube.com/channel/UCLoAYsV-GTZ5yfTe539tefg"><img src="images/icons/youtube.png" height="64" width="64" alt="YouTube"></a>
             </div>
             <div class="col">
-                <a href="https://twitch.tv/johnocz"><img src="images/icons/twitch.png" height="64" width="64"></a>
+                <a href="https://twitch.tv/johnocz"><img src="images/icons/twitch.png" height="64" width="64" alt="Twitch"></a>
             </div>
         </div>
         <a class="twitter-timeline" href="https://twitter.com/johnocz?ref_src=twsrc%5Etfw">Tweets by johnocz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
