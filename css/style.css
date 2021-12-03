@@ -142,3 +142,16 @@ img.zoom {
 .modal-footer{
     display:none;
 }
+
+.card {
+    height: 100%;
+    max-height: max-content;
+}
+
+.date {
+    font-size: small;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}

@@ -9,7 +9,7 @@ else
 // Hlavní
 $lang['about'] = 'O mně';
 $lang['projects'] = 'Projekty';
-$lang['gallery'] = 'Galerie';
+$lang['experiences'] = 'Zkušenosti';
 $lang['social-sites'] = 'Sociální sítě';
 $lang['contact'] = 'Kontakt';
 
@@ -19,14 +19,17 @@ $lang['about-text-1'] = 'Zdravím tě! Jmenuji se Johno (samozřejmě je to pře
 // Projects
 $lang['ProjectFuture.cz'] = 'Správa webu na linuxovém serveru s Apache2 systémem';
 $lang['Chapes.cz'] = 'Vyvíjení webu pro vzdělávaní a zkoušení znalostí';
-$lang['Friday'] = 'Vyvíjení vlastního voice asistenta pro ovládaní chytré domácností';
+$lang['Friday'] = 'Vyvíjení vlastního voice asistenta pro ovládaní chytré domácností a automatizace';
 $lang['TraiderBlocks.eu'] = 'Správa celé sítě TraiderBlocks.eu společně s E-Shopem a vedením teamu';
+$lang['DRIP'] = 'Programování celého backend systému na E-Shop pro školní startup';
+$lang['PASPAL'] = 'Programování webové stránky pro tým PASPAL, který soutěží v soutěži CANSAT';
 
 // Form
+$lang['verify-code'] = 'Tvůj kód';
 $lang['form-name'] = 'Jméno a přijmení';
 $lang['form-email'] = 'E-Mail';
 $lang['form-text'] = 'Zpráva';
-$lang['form-year'] = 'Aktuální rok (antispam)';
+$lang['form-code'] = 'Opiš zde tvůj kód (antispam)';
 $lang['form-send'] = 'Odeslat';
 
 // Form alerts

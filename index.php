@@ -26,12 +26,17 @@ mb_internal_encoding("UTF-8");
 $hlaska = '';
 if (isset($_GET['uspech']))
     $hlaska = $lang['form-error-success'];
+
+if(!isset($_SESSION['code'])) {
+    $_SESSION['code'] = RandomCode();
+}
+
 if ($_POST)
 {
     if (isset($_POST['jmeno']) && $_POST['jmeno'] &&
         isset($_POST['email']) && $_POST['email'] &&
         isset($_POST['zprava']) && $_POST['zprava'] &&
-        isset($_POST['rok']) && $_POST['rok'] == date('Y'))
+        isset($_POST['rok']) && $_POST['rok'] == $_SESSION['code'])
     {
         $hlavicka = 'From:' . $_POST['email'];
         $upravenaZprava = '<b>Jméno: </b>'.$_POST['jmeno'].'<br/><br/>'.'<b>Email: </b>'.$_POST['email'].'<br/><br/>'.'<b>Zpráva: </b><br/>'.$_POST['zprava'];
@@ -43,7 +48,7 @@ if ($_POST)
         if ($uspech)
         {
             $hlaska = $lang['form-error-success'];
-            header('Location: index.php?uspech=ano');
+            header('Location: /');
             exit;
         }
         else
@@ -53,6 +58,18 @@ if ($_POST)
         $hlaska = $lang['form-error-not-fill'];
 }
 
+// AntiSpam
+function RandomCode() {
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomCode = '';
+    for ($i = 0; $i < 4; $i++) {
+        $randomCode .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomCode;
+}
+
+$_SESSION['code'] = RandomCode();
 ?>
 
 <?php
@@ -98,10 +115,10 @@ header('Content-type: text/html; charset=utf-8');
 
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
     <script src="js/main.js"></script>
 
@@ -130,7 +147,7 @@ header('Content-type: text/html; charset=utf-8');
         </div>
     </header>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -141,9 +158,6 @@ header('Content-type: text/html; charset=utf-8');
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#projects"><?= $lang['projects'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#gallery"><?= $lang['gallery'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#social-sites"><?= $lang['social-sites'] ?></a>
@@ -175,26 +189,26 @@ header('Content-type: text/html; charset=utf-8');
             <div class="col">
                 <div class="card">
                     <div class="card-body own-card">
-                        <h3>ProjectFuture.cz</h3>
-                        <p><span class="badge badge-danger">PHP</span> <span class="badge badge-primary">SQL</span> <span class="badge badge-secondary">Linux</span> | 2021 - <?= $lang['current'] ?></p>
-                        <p><?= $lang['ProjectFuture.cz'] ?></p>
+                        <h3>DRIP s.r.o <span class="date">2021 - <?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-primary">SQL</span></p>
+                        <p><?= $lang['DRIP'] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <div class="card-body own-card">
-                        <h3>Chápeš.cz</h3>
-                        <p><span class="badge badge-danger">PHP</span> <span class="badge badge-info">JavaScript</span> | 2021 - <?= $lang['current'] ?></p>
-                        <p><?= $lang['Chapes.cz'] ?></p>
+                        <h3>PASPAL <span class="date">2021 - <?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-dark">CSS</span> <span class="badge bg-primary">SQL</span></p>
+                        <p><?= $lang['PASPAL'] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <div class="card-body own-card">
-                        <h3>Friday</h3>
-                        <p><span class="badge badge-success">PYTHON</span> <span class="badge badge-primary">SQL</span> | 2020 - <?= $lang['current'] ?></p>
+                        <h3>Friday <span class="date">2020 - <?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-success">PYTHON</span> <span class="badge bg-primary">SQL</span></p>
                         <p><?= $lang['Friday'] ?></p>
                     </div>
                 </div>
@@ -205,84 +219,29 @@ header('Content-type: text/html; charset=utf-8');
             <div class="col">
                 <div class="card">
                     <div class="card-body own-card">
-                        <h3>TraiderBlocks.eu</h3>
-                        <p>2020 - 2021</p>
+                        <h3>Chápeš.cz <span class="date">2021 - <?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span></p>
+                        <p><?= $lang['Chapes.cz'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body own-card">
+                        <h3>TraiderBlocks.eu <span class="date">2020 - 2021</span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">Java</span> <span class="badge bg-primary">SQL</span></p>
                         <p><?= $lang['TraiderBlocks.eu'] ?></p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <!-- Coming soon -->
-            </div>
-            <div class="col">
-                <!-- Coming soon -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Galerie -->
-    <section id="gallery" class="container">
-        <h2><?= $lang['gallery'] ?></h2>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_529.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_529.jpg" class="zoom img-fluid " alt="Louka">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_601.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_601.jpg" class="zoom img-fluid " alt="Johno v lese">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_614.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_614.jpg" class="zoom img-fluid " alt="Johno na kameni">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_585.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_585.jpg" class="zoom img-fluid " alt="Červený les">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_383.webp" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_383.webp" class="zoom img-fluid " alt="Modrý les">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_667.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_667.jpg" class="zoom img-fluid " alt="Johno na lavičce">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_486.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_486.jpg" class="zoom img-fluid " alt="Johno na louce">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_972.webp" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_972.webp" class="zoom img-fluid " alt="Modrý rybník">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_572.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_572.jpg" class="zoom img-fluid " alt="Rybník">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_561.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_561.jpg" class="zoom img-fluid " alt="Johno na molu u rybníka">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_571.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_571.jpg" class="zoom img-fluid " alt="Johno na molu u rybníka">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="images/gallery/IMG_850.jpg" class="fancybox" rel="ligthbox">
-                    <img src="images/gallery/IMG_850.jpg" class="zoom img-fluid " alt="Louka">
-                </a>
+                <div class="card">
+                    <div class="card-body own-card">
+                        <h3>ProjectFuture.cz <span class="date">2021</span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-primary">SQL</span> <span class="badge bg-secondary">Linux</span></p>
+                        <p><?= $lang['ProjectFuture.cz'] ?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -292,19 +251,19 @@ header('Content-type: text/html; charset=utf-8');
         <h2><?= $lang['social-sites'] ?></h2>
         <div class="row">
             <div class="col">
+                <a href="https://www.instagram.com/no_dev_in_the_room/"><img src="images/icons/instagram.png" height="64" width="64" alt="Twitter"></a>
+            </div>
+            <div class="col">
                 <a href="https://github.com/Johno95CZ"><img src="images/icons/github.png" height="64" width="64" alt="Github"></a>
             </div>
             <div class="col">
                 <a href="https://twitter.com/johnocz"><img src="images/icons/twitter.png" height="64" width="64" alt="Twitter"></a>
             </div>
-            <div class="col">
-                <a href="https://www.youtube.com/channel/UCLoAYsV-GTZ5yfTe539tefg"><img src="images/icons/youtube.png" height="64" width="64" alt="YouTube"></a>
-            </div>
-            <div class="col">
-                <a href="https://twitch.tv/johnocz"><img src="images/icons/twitch.png" height="64" width="64" alt="Twitch"></a>
-            </div>
         </div>
-        <a class="twitter-timeline" href="https://twitter.com/johnocz?ref_src=twsrc%5Etfw">Tweets by johnocz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="margin-top-20">
+            <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/johnocz?ref_src=twsrc%5Etfw">Tweets by johnocz</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </section>
 
     <!-- Contact -->
@@ -331,12 +290,14 @@ header('Content-type: text/html; charset=utf-8');
                 </div>
             </div>
             <br>
-            <textarea class="form-control" placeholder="Zpráva" name="<?= $lang['form-text'] ?>" rows="8"><?= htmlspecialchars($zprava) ?></textarea><br>
+            <textarea class="form-control" placeholder="<?= $lang['form-text'] ?>" name="zprava" rows="8"><?= htmlspecialchars($zprava) ?></textarea><br>
             <div class="row">
-                <div class="col-sm-6">
-                    <input name="rok" class="form-control" placeholder="<?= $lang['form-year'] ?>" type="number" /><br>
+                <div class="col-sm-6 text-center">
+                    <?= $lang['verify-code'] ?>: <?= $_SESSION['code'] ?>
+                    <input name="rok" class="form-control" placeholder="<?= $lang['form-code'] ?>" type="text" /><br>
                 </div>
                 <div class="col-sm-6">
+                    <br />
                     <input class="btn btn-success form-control" type="submit" value="<?= $lang['form-send'] ?>" />
                 </div>
             </div>
@@ -344,7 +305,7 @@ header('Content-type: text/html; charset=utf-8');
     </section>
 
     <footer class="container-fluid bg-dark text-white">
-        <p>&copy; Johno <?= date('Y') ?> | <?= $lang['copyright'] ?></p>
+        <p>&copy; Johno95 <?= date('Y') ?> | <?= $lang['copyright'] ?></p>
         <h3><?= $lang['advertise'] ?></h3>
         <div class="container">
             <script>
