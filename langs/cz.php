@@ -23,6 +23,8 @@ $lang['Friday'] = 'Vyvíjení vlastního voice asistenta pro ovládaní chytré 
 $lang['TraiderBlocks.eu'] = 'Správa celé sítě TraiderBlocks.eu společně s E-Shopem a vedením teamu';
 $lang['DRIP'] = 'Programování celého backend systému na E-Shop pro školní startup';
 $lang['PASPAL'] = 'Programování webové stránky pro tým PASPAL, který soutěží v soutěži CANSAT';
+$lang['YouTubeDownloader'] = 'Aplikace na automatické stahování YouTube videí ve formátu .mp3';
+$lang['MarkusFilm.com'] = 'Úprava a vylepšování webu a casting databáze';
 
 // Form
 $lang['verify-code'] = 'Tvůj kód';

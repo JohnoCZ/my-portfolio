@@ -3,20 +3,22 @@ session_start();
 
 $available_langs = array('cz','en');
 
-$_SESSION['lang'] = 'cz';
-
 if(isset($_GET['lang']) && $_GET['lang'] != ''){
     if(in_array($_GET['lang'], $available_langs))
     {
         $_SESSION['lang'] = $_GET['lang'];
+        header('Location: /');
     }
 }
-include('langs/'.$_SESSION['lang'].'.php');
 
-if ($_SESSION['lang'] == "cz")
-    $html_lang = "cs_CZ";
-else if ($_SESSION['lang'] == "en")
+if ($_SESSION['lang'] == "en") {
+    include('langs/en.php');
     $html_lang = "en";
+}
+else {
+    include('langs/cz.php');
+    $html_lang = "cs_CZ";
+}
 ?>
 
 <?php
@@ -188,20 +190,20 @@ header('Content-type: text/html; charset=utf-8');
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-body own-card">
+                    <a class="card-body own-card" href="https://drip-eco.com" target="_blank">
                         <h3>DRIP s.r.o <span class="date">2021 - <?= $lang['current'] ?></span></h3>
                         <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-primary">SQL</span></p>
                         <p><?= $lang['DRIP'] ?></p>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-body own-card">
-                        <h3>PASPAL <span class="date">2021 - <?= $lang['current'] ?></span></h3>
-                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-dark">CSS</span> <span class="badge bg-primary">SQL</span></p>
-                        <p><?= $lang['PASPAL'] ?></p>
-                    </div>
+                    <a class="card-body own-card" href="https://github.com/Johno95CZ/YouTube-Downloader" target="_blank">
+                        <h3>YouTube Downloader <span class="date"><?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-success">PYTHON</span></p>
+                        <p><?= $lang['YouTubeDownloader'] ?></p>
+                    </a>
                 </div>
             </div>
             <div class="col">
@@ -218,28 +220,49 @@ header('Content-type: text/html; charset=utf-8');
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-body own-card">
+                    <a class="card-body own-card" href="https://chapes.cz" target="_blank">
                         <h3>Chápeš.cz <span class="date">2021 - <?= $lang['current'] ?></span></h3>
                         <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span></p>
                         <p><?= $lang['Chapes.cz'] ?></p>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-body own-card">
-                        <h3>TraiderBlocks.eu <span class="date">2020 - 2021</span></h3>
+                    <a class="card-body own-card" href="https://traiderblocks.eu" target="_blank">
+                        <h3>TraiderBlocks.eu <span class="date">2020 - <?= $lang['current'] ?></span></h3>
                         <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">Java</span> <span class="badge bg-primary">SQL</span></p>
                         <p><?= $lang['TraiderBlocks.eu'] ?></p>
-                    </div>
+                    </a>
                 </div>
             </div>
+            <div class="col">
+                <div class="card">
+                    <a class="card-body own-card" href="https://markusfilm.com" target="_blank">
+                        <h3>MarkusFilm.com <span class="date">2022 - <?= $lang['current'] ?></span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-primary">SQL</span></p>
+                        <p><?= $lang['MarkusFilm.com'] ?></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body own-card">
                         <h3>ProjectFuture.cz <span class="date">2021</span></h3>
                         <p><span class="badge bg-danger">PHP</span> <span class="badge bg-primary">SQL</span> <span class="badge bg-secondary">Linux</span></p>
                         <p><?= $lang['ProjectFuture.cz'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body own-card">
+                        <h3>PASPAL <span class="date">2021 - 2022</span></h3>
+                        <p><span class="badge bg-danger">PHP</span> <span class="badge bg-info">JavaScript</span> <span class="badge bg-dark">CSS</span> <span class="badge bg-primary">SQL</span></p>
+                        <p><?= $lang['PASPAL'] ?></p>
                     </div>
                 </div>
             </div>

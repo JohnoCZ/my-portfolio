@@ -71,6 +71,8 @@ section {
 }
 .own-card {
     margin-bottom: -20px;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* SOCIAL SITES */

@@ -18,6 +18,8 @@ $lang['Friday'] = 'Developing my own voice assistant to control a smart home';
 $lang['TraiderBlocks.eu'] = 'Management of the entire TraiderBlocks.eu network together with the E-Shop and team management';
 $lang['DRIP'] = 'Programming the entire backend system of the E-Shop for school startup';
 $lang['PASPAL'] = 'Programming the website for team PASPAL, which is competing in the CANSAT competition';
+$lang['YouTubeDownloader'] = 'Application to automatically download YouTube videos in .mp3 format';
+$lang['MarkusFilm.com'] = 'Editing and improving the website and casting database';
 
 // Form
 $lang['verify-code'] = 'Your code';
