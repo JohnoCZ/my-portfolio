@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="cs_CZ">
+<head>
+    <title>Jonáš Židek</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zdravím tě! Jsem vývojář (programátor) webových stránek a aplikací a tohle je moje osobní portfolio.">
+
+    <meta property="og:title" content="Jonáš Židek">
+    <meta property="og:type" content="portfolio">
+    <meta property="og:url" content="https://johno95.eu">
+    <meta property="og:image" content="https://johno95.eu/img/avatar.jpeg">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!--<link rel="manifest" href="site.webmanifest">-->
+
+    <meta name="theme-color" content="#0F172B">
+
+    <!-- STYLES -->
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/aos.css" rel="stylesheet">
+
+    <!-- SCRIPTS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/dates.js"></script>
+    <script src="./js/alerts.js"></script>
+    <script src="./js/lang.js" type="module"></script>
+    <script src="./lang/cs.js" type="module"></script>
+    <script src="./js/sweetalerts.all.min.js"></script>
+</head>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SELNDHQ7CQ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SELNDHQ7CQ');
+</script>
+
+<body class="bg-slate-600" onload="animate(); change_year();">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/avatar.jpeg" class="avatar avatar-nav" alt="avatar">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" data-lang="navbar.aboutMe">O mně</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#technology" data-lang="navbar.knowledge">Mé znalosti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects" data-lang="navbar.projects">Projekty / Zkušenosti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-lang="navbar.contact">Kontakt</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-success" onclick="switch_lang('cs')">CZ</button>
+                        <button class="btn btn-outline-success" onclick="switch_lang('en')">EN</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="banner">
+            <h1 id="title">╴<span id="title-text"></span>╶</h1>
+            <p id="motto"><span id="motto-text">Loading</span></p>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <article>
+            <h2 data-aos="fade-up">O mně</h2>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <p data-aos="fade-up">Programování jsem se začal věnovat v roce 2017, kdy jsem začal pracovat s jednoduchými HTML stránkami.
+                        Rok poté jsem se začal věnovat jazyku PHP, na kterém jsem postavil nespočet webových stránek a aplikací.
+                        <br/><br/>
+                        Na střední škole jsem se začal více zajímat i o jiné programovací jazyky, jako je C#, JavaScript či Python.
+                        Dále jsem se začal zajímat i více o linuxové systémy, jako je Debian a Ubuntu.
+                        <br/><br/>
+                        Aktuálně se především zabývám vývojem webových stránek a webových aplikací od jejich návrhu až
+                        po jejich realizaci.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="technology" class="container mt-5 text-end align-content-end">
+        <h2 data-aos="fade-up">Mé znalosti</h2>
+        <img src="./img/php.png" class="technology-img" data-aos="fade-up" data-aos-delay="300" alt="PHP">
+        <img src="./img/html-5.png" class="technology-img" data-aos="fade-up" data-aos-delay="250" alt="HTML">
+        <img src="./img/sql.png" class="technology-img" data-aos="fade-up" data-aos-delay="200" alt="SQL">
+        <img src="./img/css-3.png" class="technology-img" data-aos="fade-up" data-aos-delay="150" alt="CSS">
+        <img src="./img/js.png" class="technology-img" data-aos="fade-up" data-aos-delay="100" alt="JS">
+        <img src="./img/python.png" class="technology-img" data-aos="fade-up" data-aos-delay="50" alt="PYTHON">
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container mt-5">
+        <article>
+            <h2 data-aos="fade-up">Projekty / Zkušenosti</h2>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up">
+                        <h4>Markusfilm.com <span onclick="open_alert('markusfilm')">🔎</span><a href="https://markusfilm.com/" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2022 - součastnost</p>
+                        <p class="project-text">Úprava a přidávání nových funkcí do webové casting databáze.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="50">
+                        <h4>Chápeš.cz <span onclick="open_alert('chapes')">🔎</span><a href="https://chapes.cz/" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2021 - součastnost</p>
+                        <p class="project-text">Úprava a přidávání nových funkcí do vzdělávacího webu.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="100">
+                        <h4>DRIP <span onclick="open_alert('drip')">🔎</span><a href="https://drip-eco.com/" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2020 - součastnost</p>
+                        <p class="project-text">Vytváření E-Shopu pro školní startup včetně vedení IT teamu.</p>
+                    </div>
+                </div>
+                <!--
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="150">
+                        <h4>YouTube Downloader <span onclick="open_alert('youtube')">🔎</span><a href="https://github.com/Johno95CZ/YouTube-Downloader" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2022 - součastnost</p>
+                        <p class="project-text">Vytváření desktopové aplikace na stahování hudby z YouTube pomocí zkopírování odkazu.</p>
+                    </div>
+                </div>
+                -->
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="150">
+                        <h4>TraiderBlocks.eu <span onclick="open_alert('traiderblocks')">🔎</span></h4>
+                        <p class="project-year old">2019 - 2022</p>
+                        <p class="project-text">Správa MC sítě společně s vedením teamu a správou linuxových serverů.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="200">
+                        <h4>ProjectFuture.cz</h4>
+                        <p class="project-year old">2021</p>
+                        <p class="project-text">Vytváření a správa webu na linuxovém serveru.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 mt-3 project">
+                    <div class="card card-body" data-aos="fade-up" data-aos-delay="250">
+                        <h4>PASPAL <span onclick="open_alert('paspal')">🔎</span><a href="https://paspal.space/" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year old">2020 - 2022</p>
+                        <p class="project-text">Tvorba webové stránky a "živého" webu pro team PASPAL.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
+                <div data-aos="fade-up">
+                    <h2>Kontakt</h2>
+                    <p class="text-muted">
+                        ● E-Mail: <a href="mailto:info@johno95.eu" target="_blank" class="url">info@johno95.eu</a>
+                    </p>
+                    <p class="text-muted">
+                        ● Twitter: <a href="https://twitter.com/johnocz" target="_blank" class="url">@johnocz</a><br/>
+                        ● Instagram: <a href="https://instragram.com/no_dev_in_the_room" target="_blank" class="url">@no_dev_in_the_room</a>
+                    </p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <h2 class="mt-5">Bankovní spojení</h2>
+                    <p class="text-muted">
+                        ● Číslo účtu: <span class="url">2752018093/0800</span><br/>
+                        ● IBAN: <span class="url">CZ85 0800 0000 0027 5201 8093</span><br/>
+                    </p>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <a href="https://www.buymeacoffee.com/johnocz" target="_blank" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./img/bmc.png" class="payment-img" alt="bmc">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="https://paypal.me/jonaszidek" target="_blank" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./img/paypal.png" class="payment-img" alt="paypal">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6" data-aos="fade-right" data-aos-delay="300">
+                <h2>Twitter</h2>
+                <a class="twitter-timeline" data-height="400" data-theme="dark" href="https://twitter.com/johnocz?ref_src=twsrc%5Etfw">Tweets by johnocz</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <hr>
+        <div class="row text-center">
+            <div class="col">
+                <h5>&copy; Jonáš Židek</h5>
+                <p class="text-muted">Všechna práva vyhrazena</p>
+                <p class="text-muted"></p>
+            </div>
+            <div class="col">
+                <span class="text-muted">2017 - <span id="current_year">2000</span></span>
+                <p class="text-muted">Poslední úprava: 17.12.2022</p>
+            </div>
+            <div class="col">
+                <h5>Sociální sítě</h5>
+                <a href="https://linktr.ee/johnocz" target="_blank" class="url">Všechny moje sociální sítě</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>

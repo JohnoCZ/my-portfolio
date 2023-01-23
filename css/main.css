@@ -1,0 +1,98 @@
+body {
+    color: white;
+}
+
+@media (min-width: 0) {
+    header {
+        max-height: 1080px;
+        max-width: 1920px;
+        background-size: cover;
+        color: white;
+        height: 50vh;
+        margin: 0;
+    }
+}
+
+
+@media (min-width: 600px) and (orientation:landscape) {
+    header {
+        max-height: 1080px;
+        max-width: 1920px;
+        background-size: cover;
+        color: white;
+        height: 100vh;
+        margin:0;
+    }
+}
+
+.bg-slate-600 {
+    background-color: #0F172B;
+    color: white;
+}
+
+#banner {
+    align-content: center;
+    text-align: center;
+    padding-top: 18%;
+    padding-bottom: 23%;
+}
+
+#title {
+    color: #e5e5e5;
+    font-family: fantasy;
+}
+
+#motto {
+    color: #0F172B;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.avatar-nav {
+    width: 48px;
+}
+
+.technology-img {
+    width: 64px;
+}
+
+.payment-img {
+    width: 128px;
+}
+
+.card-body {
+    color: inherit;
+    text-decoration: none;
+}
+
+.url {
+    color: #0A58C0;
+    text-decoration: none;
+}
+
+.project {
+    height: 100%;
+    max-height: max-content;
+}
+
+.project h4 {
+    color: #0F172B;
+}
+
+.project-year {
+    color: #2863e5;
+}
+
+.old {
+    color: #ec1513;
+}
+
+.project-text {
+    color: black;
+}
+
+footer {
+    margin-top: 100px;
+}
