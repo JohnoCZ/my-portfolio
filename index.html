@@ -27,9 +27,8 @@
     <script src="./js/animations.js"></script>
     <script src="./js/dates.js"></script>
     <script src="./js/alerts.js"></script>
-    <script src="./js/lang.js" type="module"></script>
-    <script src="./lang/cs.js" type="module"></script>
     <script src="./js/sweetalerts.all.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
 </head>
 
 <!-- Google Analytics -->
@@ -55,10 +54,10 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#about" data-lang="navbar.aboutMe">O mně</a>
+                            <a class="nav-link" href="#about" data-lang="navbar.about">O mně</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#technology" data-lang="navbar.knowledge">Mé znalosti</a>
+                            <a class="nav-link" href="#knowledge" data-lang="navbar.knowledge">Mé znalosti</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#projects" data-lang="navbar.projects">Projekty / Zkušenosti</a>
@@ -67,6 +66,10 @@
                             <a class="nav-link" href="#contact" data-lang="navbar.contact">Kontakt</a>
                         </li>
                     </ul>
+                    <div class="d-flex">
+                        <img src="/img/czech-republic.png" height="32" id="csTranslator" onclick="translate('cs')">CZ</img>
+                        <img src="/img/united-kingdom.png" height="32" id="enTranslator" onclick="translate('en')">EN</button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -79,10 +82,10 @@
     <!-- ABOUT -->
     <section id="about" class="container">
         <article>
-            <h2 data-aos="fade-up">O mně</h2>
+            <h2 data-aos="fade-up" data-lang="section.about">O mně</h2>
             <div class="row">
                 <div class="col-lg-6 col-sm-12">
-                    <p data-aos="fade-up">Programování jsem se začal věnovat v roce 2017, kdy jsem začal pracovat s jednoduchými HTML stránkami.
+                    <p data-aos="fade-up" data-lang="about.content">Programování jsem se začal věnovat v roce 2017, kdy jsem začal pracovat s jednoduchými HTML stránkami.
                         Rok poté jsem se začal věnovat jazyku PHP, na kterém jsem postavil nespočet webových stránek a aplikací.
                         <br/><br/>
                         Na střední škole jsem se začal více zajímat i o jiné programovací jazyky, jako je C#, JavaScript či Python.
@@ -97,8 +100,8 @@
     </section>
 
     <!-- TECHNOLOGY -->
-    <section id="technology" class="container mt-5 text-end align-content-end">
-        <h2 data-aos="fade-up">Mé znalosti</h2>
+    <section id="knowledge" class="container mt-5 text-end align-content-end">
+        <h2 data-aos="fade-up" data-lang="section.knowledge">Mé znalosti</h2>
         <img src="./img/php.png" class="technology-img" data-aos="fade-up" data-aos-delay="300" alt="PHP">
         <img src="./img/html-5.png" class="technology-img" data-aos="fade-up" data-aos-delay="250" alt="HTML">
         <img src="./img/sql.png" class="technology-img" data-aos="fade-up" data-aos-delay="200" alt="SQL">
@@ -110,61 +113,55 @@
     <!-- PROJECTS -->
     <section id="projects" class="container mt-5">
         <article>
-            <h2 data-aos="fade-up">Projekty / Zkušenosti</h2>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up">
-                        <h4>Markusfilm.com <span onclick="open_alert('markusfilm')">🔎</span><a href="https://markusfilm.com/" class="url" target="_blank">↗</a></h4>
-                        <p class="project-year">2022 - součastnost</p>
-                        <p class="project-text">Úprava a přidávání nových funkcí do webové casting databáze.</p>
+            <h2 data-aos="fade-up" data-lang="section.projects">Projekty / Zkušenosti</h2>
+            <div class="row row-cols-2">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up">
+                        <h4>Markusfilm.com</span> <span onclick="open_alert('markusfilm')">🔎</span><a href="https://markusfilm.com/" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2022 - <span data-lang="project.present">součastnost</span></p>
+                        <p class="project-text" data-lang="project.markusfilm">Úprava a přidávání nových funkcí do webové casting databáze.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="50">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="50">
                         <h4>Chápeš.cz <span onclick="open_alert('chapes')">🔎</span><a href="https://chapes.cz/" class="url" target="_blank">↗</a></h4>
-                        <p class="project-year">2021 - součastnost</p>
-                        <p class="project-text">Úprava a přidávání nových funkcí do vzdělávacího webu.</p>
+                        <p class="project-year">2021 - <span data-lang="project.present">součastnost</span></p>
+                        <p class="project-text" data-lang="project.chapes">Úprava a přidávání nových funkcí do vzdělávacího webu.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
                         <h4>DRIP <span onclick="open_alert('drip')">🔎</span><a href="https://drip-eco.com/" class="url" target="_blank">↗</a></h4>
-                        <p class="project-year">2020 - součastnost</p>
-                        <p class="project-text">Vytváření E-Shopu pro školní startup včetně vedení IT teamu.</p>
+                        <p class="project-year">2020 - <span data-lang="project.present">součastnost</span></p>
+                        <p class="project-text" data-lang="project.drip">Vytváření E-Shopu pro školní startup včetně vedení IT teamu.</p>
                     </div>
                 </div>
-                <!--
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="150">
-                        <h4>YouTube Downloader <span onclick="open_alert('youtube')">🔎</span><a href="https://github.com/Johno95CZ/YouTube-Downloader" class="url" target="_blank">↗</a></h4>
-                        <p class="project-year">2022 - součastnost</p>
-                        <p class="project-text">Vytváření desktopové aplikace na stahování hudby z YouTube pomocí zkopírování odkazu.</p>
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="150">
+                        <h4>LiveZone.cz <span onclick="open_alert('livezone')">🔎</span><a href="https://livezone.cz" class="url" target="_blank">↗</a></h4>
+                        <p class="project-year">2021 - <span data-lang="project.present">součastnost</span></p>
+                        <p class="project-text" data-lang="project.livezone">Vedení projektu společně s zařizovaním spoluprácí jakožto CEO.</p>
                     </div>
                 </div>
-                -->
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
                         <h4>TraiderBlocks.eu <span onclick="open_alert('traiderblocks')">🔎</span></h4>
                         <p class="project-year old">2019 - 2022</p>
-                        <p class="project-text">Správa MC sítě společně s vedením teamu a správou linuxových serverů.</p>
+                        <p class="project-text" data-lang="project.traiderblocks">Správa MC sítě společně s vedením teamu a správou linuxových serverů.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="250">
                         <h4>ProjectFuture.cz</h4>
                         <p class="project-year old">2021</p>
-                        <p class="project-text">Vytváření a správa webu na linuxovém serveru.</p>
+                        <p class="project-text" data-lang="project.projectfuture">Vytváření a správa webu na linuxovém serveru.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-12 mt-3 project">
-                    <div class="card card-body" data-aos="fade-up" data-aos-delay="250">
+                <div class="col-lg-6 col-sm-12 mt-3 project d-flex align-items-lg-stretch">
+                    <div class="card card-body d-flex flex-column" data-aos="fade-up" data-aos-delay="300">
                         <h4>PASPAL <span onclick="open_alert('paspal')">🔎</span><a href="https://paspal.space/" class="url" target="_blank">↗</a></h4>
                         <p class="project-year old">2020 - 2022</p>
-                        <p class="project-text">Tvorba webové stránky a "živého" webu pro team PASPAL.</p>
+                        <p class="project-text" data-lang="project.paspal">Tvorba webové stránky a "živého" webu pro team PASPAL.</p>
                     </div>
                 </div>
             </div>
@@ -176,7 +173,7 @@
         <div class="row">
             <div class="col-sm-12 col-lg-6">
                 <div data-aos="fade-up">
-                    <h2>Kontakt</h2>
+                    <h2 data-lang="section.contact">Kontakt</h2>
                     <p class="text-muted">
                         ● E-Mail: <a href="mailto:info@johno95.eu" target="_blank" class="url">info@johno95.eu</a>
                     </p>
@@ -187,9 +184,9 @@
                 </div>
 
                 <div data-aos="fade-up">
-                    <h2 class="mt-5">Bankovní spojení</h2>
+                    <h2 class="mt-5" data-lang="section.bank">Bankovní spojení</h2>
                     <p class="text-muted">
-                        ● Číslo účtu: <span class="url">2752018093/0800</span><br/>
+                        ● <span data-lang="bank.number">Číslo účtu</span>: <span class="url">2752018093/0800</span><br/>
                         ● IBAN: <span class="url">CZ85 0800 0000 0027 5201 8093</span><br/>
                     </p>
                 </div>
@@ -220,22 +217,33 @@
         <div class="row text-center">
             <div class="col">
                 <h5>&copy; Jonáš Židek</h5>
-                <p class="text-muted">Všechna práva vyhrazena</p>
+                <p class="text-muted" data-lang="footer.copyright">Všechna práva vyhrazena</p>
                 <p class="text-muted"></p>
             </div>
             <div class="col">
                 <span class="text-muted">2017 - <span id="current_year">2000</span></span>
-                <p class="text-muted">Poslední úprava: 17.12.2022</p>
+                <p class="text-muted"><span data-lang="footer.last-edit">Poslední úprava</span>: 09.02.2023</p>
             </div>
             <div class="col">
-                <h5>Sociální sítě</h5>
-                <a href="https://linktr.ee/johnocz" target="_blank" class="url">Všechny moje sociální sítě</a>
+                <h5 data-lang="footer.social-sites">Sociální sítě</h5>
+                <a href="https://linktr.ee/johnocz" target="_blank" class="url" data-lang="footer.social-sites.url">Všechny moje sociální sítě</a>
             </div>
         </div>
     </footer>
 
+    <!-- Alert text -->
+    <div id="alert.markusfilm" data-lang="alert.markusfilm" hidden>Web je napsaný ve framework Laravel, databáze běží na SQL. Mojí hlavní náplní práce je vyvíjení nových funkcí pro casting, který se nachází na webu. Dále upravuji již zavedené funkce a udržuji vše funkční.</div>
+    <div id="alert.chapes" data-lang="alert.chapes" hidden>Web běží na jazyce PHP a dále je osazen o jazyky JavaScript, CSS, HTML a knihovnu stylů Bootstrap. Mojí hlavní náplní práce je upravování již zavedených funkcí či přidávání nových vylepšení + udržuji vše funkční.</div>
+    <div id="alert.drip" data-lang="alert.drip" hidden>Mojí hlavní náplní práce je vedení IT teamu společně s grafickým teamem. Dále vyvíjím eshop pro prodej dřevěných výrobků, kde si uživatel může sám navrhnout grafiku, která bude na produkt vypálená. Web beží na jazyce PHP a na front-end byly použity jazyky JavaScript, HTML, CSS a knihovna stylů Bootstrap.</div>
+    <div id="alert.livezone" data-lang="alert.livezone" hidden>V roce 2021 jsem se rozhodl založit konkurenci pro streamovací platformu Twitch.tv, kde budou moci streameři streamovat bez přisných podmínek a získavát ze svého výdělku co největší procenta. Ovšem projekt se rozrostl. Stále vyvýjíme tuto streamovací platformu, ale zapojili jsme se i do vyvíjení vlastních hostingových služeb pro hostování webů, herních serverů, voice serverů a taktéž nabízíme službu code hosting. Kromě vedení celého projektu jakožto CEO se taktéž starám o účetnictví, plánování budoucnosti projektu, vyřizování spolupráci atd.</div>
+    <div id="alert.traiderblocks" data-lang="alert.traiderblocks" hidden>V roce 2019 jsem byl přizvaný do jednoho MC projektu, kde jsem měl tvořit webové strány a spravovat pluginy na serverech. Tento projekt však rychle zaniknul a celý tým jsem vzal pod nový projekt TraiderBlocks.eu. Mojí náplní práce bylo vést celý team a spravovat linuxové servery společně s webovými stránkami a databázovým systémem MariaDB. V dnešní době je projekt neaktivní, jeho plánovaná obnova je v polovině roku 2023.</div>
+    <div id="alert.paspal" data-lang="alert.paspal" hidden>Po nástupu na střední školu jsem se zapojil společně s 5 spolužáky do souteže CanSat, kde jsme měli za úkol vytvořit satelit velikosti plechovky. Mojí hlavní náplní práce bylo vytváření webových stránek pro propagaci teamu a "živého" webu pro zobrazení aktuálních dat ze satelitu v realném čase. Hlavní web byl napsaný v jazyce HTML a CSS společně s knihovnou stylů W3.CSS a "živy" web byl napsaný v jazyke PHP a následně přepsaný do Node.js.</div>
+
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
+
+    <!-- Translate -->
+    <script src="./js/lang.js"></script>
 </body>
 </html>

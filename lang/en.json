@@ -1,0 +1,38 @@
+{
+  "navbar.about": "About Me",
+  "navbar.knowledge": "My knowledge",
+  "navbar.projects": "Projects / Experiences",
+  "navbar.contact": "Contact",
+
+  "section.about": "About Me",
+  "section.knowledge": "My knowledge",
+  "section.projects": "Projects / Experiences",
+  "section.contact": "Contact",
+  "section.bank": "Bank connection",
+
+  "about.content": "I started programming in 2017, when I started working with simple HTML pages.\n                        A year after that, I started to devote myself to the PHP language, on which I built countless websites and applications.\n                        <br/><br/>\n                        In high school, I became more interested in other programming languages, such as C#, JavaScript, and Python.\n                        I also became more interested in Linux systems such as Debian and Ubuntu.\n                        <br/><br/>\n                        Currently, I mainly deal with the development of websites and web applications from their design to\n                        after their implementation.",
+
+  "project.present": "present",
+
+  "project.markusfilm": "Editing and adding new features to the web casting database.",
+  "project.chapes": "Editing and adding new features to the educational website.",
+  "project.drip": "Creation of an E-Shop for a school startup, including management of the IT team.",
+  "project.livezone": "Project management together with arranging cooperation as CEO.",
+  "project.traiderblocks": "MC network management together with team management and Linux server management.",
+  "project.projectfuture": "Creating and managing a website on a Linux server.",
+  "project.paspal": "Creation of a website and a \"live\" website for the PASPAL team.",
+
+  "alert.markusfilm": "The website is written in the Laravel framework, the database runs on SQL. My main job is developing new features for casting, which is located on the web. Furthermore, I modify the already implemented functions and keep everything functional.",
+  "alert.chapes": "The website runs on PHP and is equipped with JavaScript, CSS, HTML and the Bootstrap style library. My main job is modifying already established features or adding new improvements + I keep everything functional.",
+  "alert.drip": "My main job is leading the IT team together with the graphics team. I am also developing an e-shop for the sale of wooden products, where the user can design a graphic that will be burned onto the product. The website runs on PHP and JavaScript, HTML, CSS and the Bootstrap style library were used for the front-end.",
+  "alert.livezone": "In 2021, I decided to create a competition for the Twitch.tv streaming platform, where streamers will be able to stream without strict conditions and get the largest percentage of their earnings. But the project grew. We are still developing this streaming platform, but we are also involved in developing our own hosting services for hosting websites, game servers, voice servers and we also offer a code hosting service. In addition to managing the entire project as CEO, I also take care of accounting, planning the future of the project, managing cooperation, etc.",
+  "alert.traiderblocks": "In 2019, I was invited to one MC project, where I was supposed to create websites and manage plugins on servers. However, this project quickly disappeared and I took the whole team under the new TraiderBlocks.eu project. My job was to lead the whole team and manage Linux servers together with websites and the MariaDB database system. Today, the project is inactive, its planned renewal is in mid-2023.",
+  "alert.paspal": "After entering high school, I participated together with 5 classmates in the CanSat competition, where we had the task of creating a satellite the size of a can. My main job was creating websites for promoting the team and a \"live\" website for displaying current satellite data in real time. The main website was written in HTML and CSS together with the W3.CSS style library, and the \"live\" website was written in PHP and subsequently rewritten in Node.js.",
+
+  "bank.number": "Account number",
+
+  "footer.copyright": "All rights reserved",
+  "footer.last-edit": "Last edit",
+  "footer.social-sites": "Social networks",
+  "footer.social-sites.url": "All my social networks"
+}

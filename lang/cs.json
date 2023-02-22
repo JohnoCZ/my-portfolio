@@ -1,0 +1,38 @@
+{
+  "navbar.about": "O mně",
+  "navbar.knowledge": "Mé znalosti",
+  "navbar.projects": "Projekty / Zkušenosti",
+  "navbar.contact": "Kontakt",
+
+  "section.about": "O mně",
+  "section.knowledge": "Mé znalosti",
+  "section.projects": "Projekty / Zkušenosti",
+  "section.contact": "Kontakt",
+  "section.bank": "Bankovní spojení",
+
+  "about.content": "Programování jsem se začal věnovat v roce 2017, kdy jsem začal pracovat s jednoduchými HTML stránkami.\n                        Rok poté jsem se začal věnovat jazyku PHP, na kterém jsem postavil nespočet webových stránek a aplikací.\n                        <br/><br/>\n                        Na střední škole jsem se začal více zajímat i o jiné programovací jazyky, jako je C#, JavaScript či Python.\n                        Dále jsem se začal zajímat i více o linuxové systémy, jako je Debian a Ubuntu.\n                        <br/><br/>\n                        Aktuálně se především zabývám vývojem webových stránek a webových aplikací od jejich návrhu až\n                        po jejich realizaci.",
+
+  "project.present": "součastnost",
+
+  "project.markusfilm": "Úprava a přidávání nových funkcí do webové casting databáze.",
+  "project.chapes": "Úprava a přidávání nových funkcí do vzdělávacího webu.",
+  "project.drip": "Vytváření E-Shopu pro školní startup včetně vedení IT teamu.",
+  "project.livezone": "Vedení projektu společně s zařizovaním spoluprácí jakožto CEO.",
+  "project.traiderblocks": "Správa MC sítě společně s vedením teamu a správou linuxových serverů.",
+  "project.projectfuture": "Vytváření a správa webu na linuxovém serveru.",
+  "project.paspal": "Tvorba webové stránky a \"živého\" webu pro team PASPAL.",
+
+  "alert.markusfilm": "Web je napsaný ve framework Laravel, databáze běží na SQL. Mojí hlavní náplní práce je vyvíjení nových funkcí pro casting, který se nachází na webu. Dále upravuji již zavedené funkce a udržuji vše funkční.",
+  "alert.chapes": "Web běží na jazyce PHP a dále je osazen o jazyky JavaScript, CSS, HTML a knihovnu stylů Bootstrap. Mojí hlavní náplní práce je upravování již zavedených funkcí či přidávání nových vylepšení + udržuji vše funkční.",
+  "alert.drip": "Mojí hlavní náplní práce je vedení IT teamu společně s grafickým teamem. Dále vyvíjím eshop pro prodej dřevěných výrobků, kde si uživatel může sám navrhnout grafiku, která bude na produkt vypálená. Web beží na jazyce PHP a na front-end byly použity jazyky JavaScript, HTML, CSS a knihovna stylů Bootstrap.",
+  "alert.livezone": "V roce 2021 jsem se rozhodl založit konkurenci pro streamovací platformu Twitch.tv, kde budou moci streameři streamovat bez přisných podmínek a získavát ze svého výdělku co největší procenta. Ovšem projekt se rozrostl. Stále vyvýjíme tuto streamovací platformu, ale zapojili jsme se i do vyvíjení vlastních hostingových služeb pro hostování webů, herních serverů, voice serverů a taktéž nabízíme službu code hosting. Kromě vedení celého projektu jakožto CEO se taktéž starám o účetnictví, plánování budoucnosti projektu, vyřizování spolupráci atd.",
+  "alert.traiderblocks": "V roce 2019 jsem byl přizvaný do jednoho MC projektu, kde jsem měl tvořit webové strány a spravovat pluginy na serverech. Tento projekt však rychle zaniknul a celý tým jsem vzal pod nový projekt TraiderBlocks.eu. Mojí náplní práce bylo vést celý team a spravovat linuxové servery společně s webovými stránkami a databázovým systémem MariaDB. V dnešní době je projekt neaktivní, jeho plánovaná obnova je v polovině roku 2023.",
+  "alert.paspal": "Po nástupu na střední školu jsem se zapojil společně s 5 spolužáky do souteže CanSat, kde jsme měli za úkol vytvořit satelit velikosti plechovky. Mojí hlavní náplní práce bylo vytváření webových stránek pro propagaci teamu a \"živého\" webu pro zobrazení aktuálních dat ze satelitu v realném čase. Hlavní web byl napsaný v jazyce HTML a CSS společně s knihovnou stylů W3.CSS a \"živy\" web byl napsaný v jazyke PHP a následně přepsaný do Node.js.",
+
+  "bank.number": "Číslo účtu",
+
+  "footer.copyright": "Všechna práva vyhrazena",
+  "footer.last-edit": "Poslední úprava",
+  "footer.social-sites": "Sociálníé sítě",
+  "footer.social-sites.url": "Všechny moje sociální sítě"
+}
