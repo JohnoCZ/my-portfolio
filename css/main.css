@@ -4,8 +4,6 @@ body {
 
 @media (min-width: 0) {
     header {
-        max-height: 1080px;
-        max-width: 1920px;
         background-size: cover;
         color: white;
         height: 50vh;
@@ -16,8 +14,6 @@ body {
 
 @media (min-width: 600px) and (orientation:landscape) {
     header {
-        max-height: 1080px;
-        max-width: 1920px;
         background-size: cover;
         color: white;
         height: 100vh;
