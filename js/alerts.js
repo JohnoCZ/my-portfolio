@@ -57,6 +57,14 @@ function open_alert(name) {
             focusConfirm: false,
             confirmButtonText: 'Zavřít',
         })
+    }else if (name === "accessible-solutions") {
+        Swal.fire({
+            title: '<strong>Accessible Solutions s.r.o.</strong>',
+            html: document.getElementById('alert.accessible-solutions').innerText,
+            showCloseButton: false,
+            showCancelButton: false,
+            focusConfirm: false,
+            confirmButtonText: 'Zavřít',
+        })
     }
-
 }
